@@ -1,12 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+var cors = require('cors');
 
 // routes import
 const teams = require('./routes/api/teams');
 const features = require('./routes/api/feature');
 const issues = require('./routes/api/issue');
 const tasks = require('./routes/api/tasks');
+
+//cors handling
+app.use(cors());
+
 
 // body parser middleware
 app.use(bodyParser.urlencoded({
