@@ -2,7 +2,7 @@
 const mysql = require('mysql');
 
  connection = mysql.createConnection({
-    host: "amnok.cjss6d6dlgc9.ap-south-1.rds.amazonaws.com",
+    host: "202.173.125.142",
     port:"3306",
     user: "root",
     password: "password",
