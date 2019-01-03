@@ -15,9 +15,21 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
+
+
 //connection file
 var connection = require('./config/connection');
 // app.disable('etag');
+
+//check connection
+connection.connect(function(err) {
+  if (err) {
+    return console.error('error connecting in sql: ' + err.message);
+  }
+ 
+  console.log('Connected to the MySQL server.');
+});
+
 
 //test route
 app.get('/', (req, res) => res.send("hello there !! sos "));
